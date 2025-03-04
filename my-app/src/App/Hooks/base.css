@@ -1,0 +1,51 @@
+button {
+  background-color: snow;
+  width: 75px;
+  height: 30px;
+
+  border-radius: 12px;
+  border: 0;
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: snow;
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.3);
+}
+
+section {
+  width: 75%;
+  height: auto;
+  align-self: center;
+  justify-self: center;
+  gap: 1rem;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+input[type="text"] {
+  border-radius: 12px;
+  align-items: center;
+  justify-self: center;
+  height: 20px;
+
+  border: 0;
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  height: 20px;
+  border: 0;
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+  background-color: snow;
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.3);
+}

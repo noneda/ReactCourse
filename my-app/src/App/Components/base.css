@@ -1,0 +1,18 @@
+article {
+  height: auto;
+  width: 200px;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+article:hover {
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.3);
+  transform: scale(1.5);
+}

@@ -1,14 +1,39 @@
+import { useState, useEffect } from "react";
 import Book from "./Components";
 import Events from "./Hooks";
 
+import { Arr } from "./Utils";
+
 import "./base.css";
-const BookLists = () => (
-  <main>
-    <Events />
-    {new Array(12).fill({ Title: "Title", Author: "Name" }).map((_, index) => (
-      <Book key={index} {..._} />
-    ))}
-  </main>
-);
+const BookLists = () => {
+  const [isTitle, setTitle] = useState("");
+  const [newArr, setNewArr] = useState(Arr);
+
+  const getBookTitle = (title) => {
+    if (title) {
+      const filteredBooks = Arr.filter((_) => {
+        console.log(_.Title == title);
+      });
+      setNewArr(filteredBooks);
+    } else {
+      setNewArr(Arr);
+    }
+  };
+  useEffect(() => {
+    getBookTitle(isTitle);
+    console.log(isTitle);
+  }, [isTitle]);
+
+  return (
+    <>
+      <main>
+        <Events setTitle={setTitle} />
+        {newArr.map((_, index) => (
+          <Book key={index} {..._} />
+        ))}
+      </main>
+    </>
+  );
+};
 
 export default BookLists;

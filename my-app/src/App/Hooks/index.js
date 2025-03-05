@@ -1,34 +1,28 @@
 import "./base.css";
+import { useState } from "react";
 
-const Events = () => {
+const Events = ({ setTitle }) => {
+  const [isSearch, setSearch] = useState("");
+
   const handleInputSub = (e) => {
-    console.log("Input Handle Activate");
-    console.log(e.target.value);
+    setSearch(e.target.value);
   };
-
-  const handleButton = () => {
-    alert("Activate Button");
-  };
-
   const handleFormSubmit = () => {
-    console.log("Form Submit");
+    setTitle(isSearch);
   };
-
   return (
     <>
       <section>
-        <form onSubmit={handleFormSubmit}>
-          <h2>Typical Form</h2>
-          <input
-            type="text"
-            name="example"
-            onChange={handleInputSub}
-            style={{ margin: "1rem 0" }}
-          />
-          <button type="submit">Submit</button>
-        </form>
-
-        <button onClick={handleButton}>Click Me</button>
+        <h1>Typical Form</h1>
+        <input
+          type="text"
+          onChange={handleInputSub}
+          style={{ margin: "1rem 0" }}
+          placeholder="Search"
+        />
+        <button className="submit" onClick={handleFormSubmit}>
+          Submit
+        </button>
       </section>
     </>
   );
